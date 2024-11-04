@@ -1,5 +1,9 @@
 # Resume-Screening-and-Job-Recommendation
 
+## Dataset Used
+Link: https://www.kaggle.com/datasets/noorsaeed/resume-datasets
+
+
 ## Images
 
 ![WhatsApp Image 2024-11-04 at 23 36 42_ef657e27](https://github.com/user-attachments/assets/d5b15365-69a5-4ec2-8e29-ff73290ff9b8)
