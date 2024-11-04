@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Screening AI-Based System</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            margin-top: 30px;
+            color: #555;
+        }
+
+        /* Header Styles */
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 0.2em;
+        }
+
+        h2 {
+            margin-bottom: 1em;
+            font-size: 1.5em;
+            color: #3a539b;
+        }
+
+        /* Button Styles */
+        button, input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            font-size: 1em;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            margin-top: 15px;
+        }
+
+        button:hover, input[type="submit"]:hover {
+            background-color: #2980b9;
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* File Input Style */
+        input[type="file"] {
+            margin-bottom: 20px;
+            padding: 8px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            background-color: #ecf0f1;
+        }
+
+        /* Information List Styles */
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .info-list li {
+            font-size: 1em;
+            margin-bottom: 8px;
+            padding: 10px;
+            background-color: #f9fbfc;
+            border: 1px solid #ecf0f1;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Job Recommendation Box Style */
+        .job-recommendation {
+            background-color: #e0f7fa; /* Light blue color */
+            color: #00796b; /* Darker shade for contrast */
+            font-weight: bold;
+        }
+
+        /* Enhanced Text Styles */
+        .section-title {
+            color: #1abc9c;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .result-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid #e3e6e9;
+        }
+
+        /* Utility Styles */
+        .center {
+            text-align: center;
+        }
+
+        .text-muted {
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="container">
+        <h1>Resume Screening AI-Based System</h1>
+        <p class="center text-muted">This system supports TXT and PDF file uploads for:</p>
+        <ul class="info-list">
+            <li><span class="highlight">Resume Categorization</span></li>
+            <li><span class="highlight">Job Role Recommendation</span></li>
+            <li><span class="highlight">Resume Parsing (Information Extraction)</span></li>
+        </ul>
+    </div>
+
+    <!-- Upload Form Section -->
+    <div class="container">
+        <h2>Upload Your Resume</h2>
+        <form action="/pred" method="post" enctype="multipart/form-data">
+            <input type="file" name="resume" accept=".pdf, .txt" required>
+            <input type="submit" value="Analyze Resume">
+        </form>
+
+        {% if message %}
+        <p class="center" style="margin-top: 10px; color: #e74c3c;">{{message}}</p>
+        {% endif %}
+
+        {% if predicted_category %}
+        <!-- Results Section -->
+        <div class="result-container">
+            <h2 class="center">Analysis Results</h2>
+            <p><strong>Category:</strong> <span>{{predicted_category}}</span></p>
+            <h3 class="section-title">Recommended Jobs</h3>
+            <ul class="info-list">
+                {% for job in recommended_job %}
+                <li style="background-color: #daebf2; color: #03364d; font-weight: bold; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 8px;">
+                    {{ job }}
+                </li>
+                {% endfor %}
+            </ul>
+
+
+            <!-- Extracted Information -->
+            <h3 class="section-title">Extracted Information</h3>
+            <p><strong>Name:</strong> {{name}}</p>
+            <p><strong>Phone No:</strong> {{phone or "Not found"}}</p>
+            <p><strong>Email:</strong> {{email or "Not found"}}</p>
+
+            <!-- Skills Section -->
+            {% if extracted_skills %}
+            <h3 class="section-title">Skills</h3>
+            <ul class="info-list">
+                {% for skill in extracted_skills %}
+                <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="text-muted">No skills found.</p>
+            {% endif %}
+
+            <!-- Education Section -->
+            {% if extracted_education %}
+            <h3 class="section-title">Education</h3>
+            <ul class="info-list">
+                {% for edu in extracted_education %}
+                <li>{{ edu }}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="text-muted">No education information found.</p>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
