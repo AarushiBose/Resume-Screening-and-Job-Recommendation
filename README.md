@@ -1,7 +1,49 @@
 # Resume-Screening-and-Job-Recommendation
 
+## Introduction
+The Resume Screening AI-Based System is a web application that leverages machine learning to assist recruiters in automating the process of categorizing resumes, recommending suitable job roles, and extracting essential information from resumes. This project enables users to upload resumes in either PDF or TXT format and receive recommendations and parsed resume details.
+
+## Problem Statement
+In traditional hiring processes, recruiters often face challenges when manually screening large volumes of resumes. This manual process is time-consuming, prone to human error, and can result in the omission of qualified candidates due to cognitive biases or fatigue. Additionally, categorizing resumes and matching candidates to suitable job roles requires expertise and attention to detail, which can be difficult to maintain under heavy workloads.
+
+## Solution
+The Resume Screening AI-Based System addresses these challenges by using machine learning models to categorize resumes and recommend job roles based on candidate qualifications. It also provides a resume parsing feature that extracts essential information such as contact details, skills, and education, allowing for a streamlined and efficient recruitment process.
+
+
+## Project Overview
+This project consists of a web interface and backend code, allowing users to:
+
+⮞ Upload a resume in PDF or TXT format.
+
+⮞ Categorize the resume based on predefined categories.
+
+⮞ Receive job role recommendations based on resume content.
+
+⮞ Parse the resume to extract key details, including the candidate's name, contact information, skills, and education.
+
+
 ## Dataset Used
 Link: https://www.kaggle.com/datasets/noorsaeed/resume-datasets
+
+## Project Structure
+
+The project files are structured as follows:
+
+➣ Resume-Categorization.ipynb: A Jupyter notebook for training or testing the resume categorization model. This notebook includes data preprocessing steps and model training code.
+
+➣ Resume-Job-Recommendation.ipynb: A Jupyter notebook focused on building and evaluating the job recommendation system based on extracted information.
+
+➣ app.py: A Flask application that serves as the backend for handling file uploads, processing resumes, and returning categorized results and recommendations.
+
+➣ resume.html: The HTML front-end file that provides the user interface for uploading resumes and displaying analysis results, including recommendations and extracted resume information.
+
+
+## Key Features
+1: Resume Parsing: Our system utilizes NLP techniques to extract essential information from resumes, including contact details, skills, education, and work experience. This automated parsing eliminates the need for manual data entry and ensures accuracy and efficiency.
+
+2: Categorization: Machine learning algorithms categorize resumes into predefined categories based on specific criteria set by recruiters or hiring managers. This categorization enables recruiters to quickly identify top candidates for further evaluation.
+
+3: Job Recommendations: Leveraging machine learning models, our system recommends relevant job openings to candidates based on their skills, experience, and preferences. This personalized approach enhances candidate engagement and increases the likelihood of successful matches.
 
 
 ## Images
