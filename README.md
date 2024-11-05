@@ -79,29 +79,29 @@ The project files are structured as follows:
 
 
 ### 4. Backend Development (Flask Application)
-➣ **Created a Flask backend to serve the model and handle requests.
-**
-➣ **Route Setup: Configured routes to:**
+**➣ Created a Flask backend to serve the model and handle requests.**
 
-**-> **Accept resumes as input from the front end.
+**➣ Route Setup: Configured routes to:**
 
-**-> **Process the data and apply the trained model.
+-> Accept resumes as input from the front end.
 
-**-> **Return job recommendations based on the similarity scores.
+-> Process the data and apply the trained model.
+
+-> Return job recommendations based on the similarity scores.
 
 
 
 ### 5. Frontend Development (HTML & CSS)
 
-**➣ Developed a resume.html interface for recruiters to interact with the system.
+**➣ Developed a resume.html interface for recruiters to interact with the system.**
 
-➣ UI Features:**
+**➣ UI Features:**
 
- **->** Resume Upload: Allows users to upload resumes.
+-> **Resume Upload:** Allows users to upload resumes.
 
-** -> **Job Recommendations Display: Shows the most relevant job roles based on the uploaded resume.
+-> **Job Recommendations Display:** Shows the most relevant job roles based on the uploaded resume.
 
-** -> **Integrated front end with the Flask backend for a seamless user experience.
+-> **Integrated front end** with the **Flask backend** for a seamless user experience.
 
 
 
