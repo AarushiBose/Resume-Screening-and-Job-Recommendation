@@ -25,6 +25,16 @@ This project consists of a web interface and backend code, allowing users to:
 ## Dataset Used
 Link: https://www.kaggle.com/datasets/noorsaeed/resume-datasets
 
+## Technologies Used
+➣ Jupyter Notebooks: Data preprocessing, feature engineering, model training and evaluation.
+
+➣ Flask: Backend server to handle model requests and responses.
+
+➣ HTML & CSS: Front-end interface for resume upload and recommendation display.
+
+➣ Libraries: Pandas, NLTK, Scikit-learn (for TF-IDF, Cosine Similarity), Flask.
+
+
 ## Project Structure
 
 The project files are structured as follows:
@@ -36,6 +46,65 @@ The project files are structured as follows:
 ➣ app.py: A Flask application that serves as the backend for handling file uploads, processing resumes, and returning categorized results and recommendations.
 
 ➣ resume.html: The HTML front-end file that provides the user interface for uploading resumes and displaying analysis results, including recommendations and extracted resume information.
+
+
+## Methodology
+### 1. Data Collection and Preprocessing
+**➣ Data Source:** Collected datasets consisting of resumes and job descriptions.
+
+**➣ Preprocessing Steps:**
+
+-> Text Cleaning: Removed unnecessary characters, stop words, and punctuation.
+
+-> Tokenization: Split text into individual words for easier processing.
+
+-> Stemming/Lemmatization: Reduced words to their root forms for consistent analysis.
+
+-> Vectorization: Applied TF-IDF (Term Frequency-Inverse Document Frequency) to convert text data into numerical form, capturing word importance and document similarity.
+
+### 2. Feature Engineering
+➣ Transformed text data into a structured format using TF-IDF Vectorizer.
+
+➣ **Cosine Similarity Calculation:** Used cosine similarity to measure the similarity between resumes and job descriptions, enabling effective job recommendations.
+
+### 3. Model Training and Evaluation
+➣ Developed and trained a recommendation model to match resumes with relevant job descriptions.
+
+➣ **Evaluation Metrics:** Used Precision, Recall, and F1 Score to assess model accuracy and fine-tune the model for better performance.
+
+### 4. Backend Development (Flask Application)
+➣ **Created a Flask backend to serve the model and handle requests.
+**
+➣ **Route Setup: Configured routes to:**
+
+**-> **Accept resumes as input from the front end.
+
+**-> **Process the data and apply the trained model.
+
+**-> **Return job recommendations based on the similarity scores.
+
+###  Frontend Development (HTML & CSS)
+
+**➣ Developed a resume.html interface for recruiters to interact with the system.
+
+➣ UI Features:**
+
+ **->** Resume Upload: Allows users to upload resumes.
+
+** -> **Job Recommendations Display: Shows the most relevant job roles based on the uploaded resume.
+
+** -> **Integrated front end with the Flask backend for a seamless user experience.
+
+### System Workflow
+
+**Step 1:** User uploads a resume through the HTML interface.
+
+**Step 2:** The resume is sent to the Flask server, where it’s preprocessed.
+
+**Step 3:** The model analyzes the resume and calculates similarity scores with job descriptions.
+
+**Step 4:** The Flask server sends the recommended job roles back to the front end for display.
+
 
 
 ## Key Features
