@@ -62,15 +62,21 @@ The project files are structured as follows:
 
 -> Vectorization: Applied TF-IDF (Term Frequency-Inverse Document Frequency) to convert text data into numerical form, capturing word importance and document similarity.
 
+
+
 ### 2. Feature Engineering
 ➣ Transformed text data into a structured format using TF-IDF Vectorizer.
 
 ➣ **Cosine Similarity Calculation:** Used cosine similarity to measure the similarity between resumes and job descriptions, enabling effective job recommendations.
 
+
+
 ### 3. Model Training and Evaluation
 ➣ Developed and trained a recommendation model to match resumes with relevant job descriptions.
 
 ➣ **Evaluation Metrics:** Used Precision, Recall, and F1 Score to assess model accuracy and fine-tune the model for better performance.
+
+
 
 ### 4. Backend Development (Flask Application)
 ➣ **Created a Flask backend to serve the model and handle requests.
@@ -83,7 +89,9 @@ The project files are structured as follows:
 
 **-> **Return job recommendations based on the similarity scores.
 
-###  Frontend Development (HTML & CSS)
+
+
+### 5. Frontend Development (HTML & CSS)
 
 **➣ Developed a resume.html interface for recruiters to interact with the system.
 
@@ -95,7 +103,9 @@ The project files are structured as follows:
 
 ** -> **Integrated front end with the Flask backend for a seamless user experience.
 
-### System Workflow
+
+
+### 6. System Workflow
 
 **Step 1:** User uploads a resume through the HTML interface.
 
