@@ -1,5 +1,8 @@
 # Resume-Screening-and-Job-Recommendation
 
+![image](https://github.com/user-attachments/assets/f533bba1-703e-4c43-93e7-9f4d8540e544)
+
+
 ## Introduction
 The Resume Screening AI-Based System is a web application that leverages machine learning to assist recruiters in automating the process of categorizing resumes, recommending suitable job roles, and extracting essential information from resumes. This project enables users to upload resumes in either PDF or TXT format and receive recommendations and parsed resume details.
 
